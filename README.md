@@ -31,9 +31,11 @@ You are starting a new Python project. You need to track your work using Git and
 6. Do NOT initialize with README (if pushing local project)
 7. Click Create Repository
 8. Copy remote URL and connect using git remote add origin
+![Git Output](./assets/images/github-repo-create.png)
 
 ## Git Setup Steps
-1. Go to official website: https://git-scm.com/
+1. Go to official website: https://git-scm.com/install/windows
+![Git Output](./assets/images/git-windows-download.png)
 2. Download Git for Windows
 3. Run the installer
 4. Keep default options (recommended)
@@ -43,12 +45,19 @@ You are starting a new Python project. You need to track your work using Git and
 ```bash
 #verify git installation
 git --version
+```
+![Git Output](./assets/images/git-windows-version.png)
+
+```bash
 #configure git
 git config --global user.name "Your Name"
 git config --global user.email "youremail@example.com"
 #check git configuration
 git config --list
+```
+![Git Output](./assets/images/git-config.png)
 
+```bash
 #Create a new folder for your project
 mkdir Git_Github_Assignment
 cd Git_Github_Assignment
@@ -64,7 +73,10 @@ touch requirements.txt
 touch docs/git-command-list.md
 touch src/git-github-assignment/app.py
 find . -print
+```
+![Git Output](./assets/images/git-project-structure.png)
 
+```bash
 # Initialize Git repository
 git init
 
@@ -80,7 +92,10 @@ git add src/git-github-assignment/app.py
 
 #Commit with a meaningful message
 git commit -m "Initial commit: add code in app.py"
+```
+![Git Output](./assets/images/git-init-stage-commit.png)
 
+```bash
 #Create a remote repository - refer above section : GitHub Setup Steps
 
 #Add the remote (origin) to your local repo
@@ -93,8 +108,8 @@ git remote -v
 git branch -M main
 git push -u origin main
 #git push
-
 ```
+![Git Output](./assets/images/git-remote-config-push.png)
 
 ## Output
 
