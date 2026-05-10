@@ -1,3 +1,7 @@
+# Git Commands
+
+```bash
+
 git --version
 
 git config --global user.name "Yamini Soni"
@@ -32,3 +36,5 @@ git remote -v
 git branch -M main
 git push -u origin main
 #git push
+
+```
