@@ -1,6 +1,6 @@
 # Git & Github Assignment
 
-## Overview
+### Overview
 
 This repository demonstrates core Git and GitHub workflows including:
 
@@ -11,18 +11,18 @@ This repository demonstrates core Git and GitHub workflows including:
 
 ---
 
-# Question 1: Project Initialization & First Push
+## Question 1: Project Initialization & First Push
 
-## Objective
+### Objective
 Set up a new Git project and push it to a remote repository.
 
-## Scenario
+### Scenario
 You are starting a new Python project. You need to track your work using Git and upload it to a remote repository.
 
-## Project Structure
+### Project Structure
+![Git Output](./assets/images/project-structure.png)
 
-
-## GitHub Setup Steps
+### GitHub Setup Steps
 1. Go to GitHub: https://github.com
 2. Login to your account
 3. Click New Repository
@@ -33,7 +33,7 @@ You are starting a new Python project. You need to track your work using Git and
 8. Copy remote URL and connect using git remote add origin
 ![Git Output](./assets/images/github-repo-create.png)
 
-## Git Setup Steps
+### Git Setup Steps
 1. Go to official website: https://git-scm.com/install/windows
 ![Git Output](./assets/images/git-windows-download.png)
 2. Download Git for Windows
@@ -111,10 +111,21 @@ git push -u origin main
 ```
 ![Git Output](./assets/images/git-remote-config-push.png)
 
-## Output
+### Output
 
 * Local project is tracked using Git
 * Code is pushed to GitHub repository
 * Version control is successfully set up
 
 ![Git Output](./assets/images/github-code-commit.png)
+
+### Learning Outcomes
+
+By completing this assignment, I learned:
+
+- How to install and configure Git on Windows
+- How to initialize a local Git repository
+- How to create and manage project structure
+- How to stage, commit, and push changes
+- How to connect local repo with GitHub remote repository
+- Basic Git commands for version control
