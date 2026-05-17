@@ -42,5 +42,14 @@ git push -u origin main
 ## Question 2
 
 ```bash
-
+echo "print('Added a new functionality.')" > src/git-github-assignment/app.py
+git status
+git diff rc/git-github-assignment/app.py
+git add -p
+git commit -m "updated app.py file => added new functionality"
+echo "print('This is a new change.')" > asrc/git-github-assignment/app.py
+git add .
+git commit -m "updated app.py file => new change"
+git log
+git log --oneline
 ```
