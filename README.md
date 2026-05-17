@@ -99,7 +99,7 @@ git commit -m "Initial commit: add code in app.py"
 #Create a remote repository - refer above section : GitHub Setup Steps
 
 #Add the remote (origin) to your local repo
-git remote add origin https://github.com/rahulchidambaram/Github_Assignment.git
+git remote add origin https://github.com/yaminisoni9999/git-github-assignment.git
 
 #Verify the remote configuration
 git remote -v

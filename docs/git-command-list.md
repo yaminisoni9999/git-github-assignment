@@ -1,4 +1,6 @@
-# Git Commands
+# List of Commands
+
+## Question 1
 
 ```bash
 
@@ -23,11 +25,11 @@ touch src/git-github-assignment/app.py
 find . -print
 
 git init
-#rm -rf .git
+# rm -rf .git
 echo "print('Hello, This is a python file for github assignment.')" > src/git-github-assignment/app.py
 git status
 git add src/git-github-assignment/app.py
-#git add .
+# git add .
 git commit -m "Initial commit: add code in app.py"
 
 git remote add origin https://github.com/yaminisoni9999/git-github-assignment.git
@@ -36,5 +38,9 @@ git remote -v
 git branch -M main
 git push -u origin main
 #git push
-
 ```
+
+## Question 2
+
+```bash
+
