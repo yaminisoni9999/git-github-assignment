@@ -1,1 +1,1 @@
-print('Added a new functionality.')
+print('This is a new change.')

@@ -47,7 +47,7 @@ git status
 git diff rc/git-github-assignment/app.py
 git add -p
 git commit -m "updated app.py file => added new functionality"
-echo "print('This is a new change.')" > asrc/git-github-assignment/app.py
+echo "print('This is a new change.')" > src/git-github-assignment/app.py
 git add .
 git commit -m "updated app.py file => new change"
 git log
