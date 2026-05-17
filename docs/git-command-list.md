@@ -3,7 +3,6 @@
 ## Question 1
 
 ```bash
-
 git --version
 
 git config --global user.name "Yamini Soni"
@@ -44,3 +43,4 @@ git push -u origin main
 
 ```bash
 
+```
