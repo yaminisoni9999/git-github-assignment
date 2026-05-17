@@ -141,35 +141,48 @@ You are enhancing your existing app.py application with new features.
 ### Git Steps
 ```bash
 #Modify app.py by adding new functionality
-echo "print('Added a new feature')" > app.py
+echo "print('Added a new functionality.')" > src/git-github-assignment/app.py
 
 #Check what changes are made before staging
 git status
+```
+![Git Output](./assets/images/question-2/git-change-file-1.png)
 
+```bash
 #View differences in the file
-git diff
+git diff rc/git-github-assignment/app.py
 
 #Stage only specific changes (if possible)
 git add -p
 
 #Commit with a clear message
-git commit -m "added new functionality"
+git commit -m "updated app.py file => added new functionality"
+```
+![Git Output](./assets/images/question-2/git-diff-stage-commit.png)
 
+```bash
 #Make another change in app.py
-echo "print('This is a new change')" > app.py
+echo "print('This is a new change.')" > src/git-github-assignment/app.py
 
 #Stage all changes
 git add .
 
 #Commit again
-git commit -m "Updated app logic"
+git commit -m "updated app.py file => new change"
+```
+![Git Output](./assets/images/question-2/git-change-file-2-stage-commit.png)
 
+```bash
 #View full commit history
 git log
+```
+![Git Output](./assets/images/question-2/git-log.png)
 
+```bash
 #View compact (one-line) history
 git log --oneline
 ```
+![Git Output](./assets/images/question-2/git-log-one-line.png)
 
 ### Output
 
@@ -181,7 +194,7 @@ git log --oneline
 * Viewed detailed commit history using git log.
 * Viewed compact commit history using git log --oneline.
 
-![Git Output](./assets/images/question-1/github-code-commit.png)
+![Git Output](./assets/images/question-2/github-changes-history.png)
 
 ### Learning Outcomes
 
