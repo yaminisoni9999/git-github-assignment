@@ -58,11 +58,11 @@ git config --list
 ![Git Output](./assets/images/question-1/git-config.png)
 
 ```bash
-#Create a new folder for your project
+#create a new folder for your project
 mkdir Git_Github_Assignment
 cd Git_Github_Assignment
 
-#Create project structure
+#create project structure
 mkdir docs
 mkdir src
 mkdir src/git-github-assignment
@@ -77,34 +77,34 @@ find . -print
 ![Git Output](./assets/images/question-1/git-project-structure.png)
 
 ```bash
-# Initialize Git repository
+#initialize git repository
 git init
 
-#Create a file named app.py and add some Python code
+#create a file named app.py and add some python code
 echo "print('Hello, This is a python file for github assignment')" > src/git-github-assignment/app.py
 
-#Check the current Git status
+#check the current git status
 git status
 
-#Stage the file
+#stage the file
 git add src/git-github-assignment/app.py
 #git add .
 
-#Commit with a meaningful message
+#commit with a meaningful message
 git commit -m "Initial commit: add code in app.py"
 ```
 ![Git Output](./assets/images/question-1/git-init-stage-commit.png)
 
 ```bash
-#Create a remote repository - refer above section : GitHub Setup Steps
+#create a remote repository - refer above section : github steps
 
-#Add the remote (origin) to your local repo
+#add the remote (origin) to your local repo
 git remote add origin https://github.com/yaminisoni9999/git-github-assignment.git
 
-#Verify the remote configuration
+#verify the remote configuration
 git remote -v
 
-#Push your code to the remote repository
+#push your code to the remote repository
 git branch -M main
 git push -u origin main
 #git push
@@ -128,6 +128,7 @@ By completing this assignment, I learned:
 - How to create and manage project structure
 - How to stage, commit, and push changes
 - How to connect local repo with GitHub remote repository
+* Basic Git commands for version control
 
 ## Question 2: Working with Changes & History
 
@@ -139,46 +140,46 @@ You are enhancing your existing app.py application with new features.
 
 ### Git Steps
 ```bash
-#Modify app.py by adding new functionality
+#modify app.py by adding new functionality
 echo "print('Added a new functionality.')" > src/git-github-assignment/app.py
 
-#Check what changes are made before staging
+#check what changes are made before staging
 git status
 ```
 ![Git Output](./assets/images/question-2/git-change-file-1.png)
 
 ```bash
-#View differences in the file
+#view differences in the file
 git diff rc/git-github-assignment/app.py
 
-#Stage only specific changes (if possible)
+#stage only specific changes (if possible)
 git add -p
 
-#Commit with a clear message
+#commit with a clear message
 git commit -m "updated app.py file => added new functionality"
 ```
 ![Git Output](./assets/images/question-2/git-diff-stage-commit.png)
 
 ```bash
-#Make another change in app.py
+#make another change in app.py
 echo "print('This is a new change.')" > src/git-github-assignment/app.py
 
-#Stage all changes
+#stage all changes
 git add .
 
-#Commit again
+#commit again
 git commit -m "updated app.py file => new change"
 ```
 ![Git Output](./assets/images/question-2/git-change-file-2-stage-commit.png)
 
 ```bash
-#View full commit history
+#view full commit history
 git log
 ```
 ![Git Output](./assets/images/question-2/git-log.png)
 
 ```bash
-#View compact (one-line) history
+#view compact (one-line) history
 git log --oneline
 ```
 ![Git Output](./assets/images/question-2/git-log-one-line.png)
@@ -219,49 +220,61 @@ You are developing a new feature separately to avoid affecting the main code.
 
 ### Git Steps
 ```bash
-#Create a new branch (e.g., feature-update)
+#create a new branch (e.g., feature-update)
 git branch feature-update
 
-#Switch to the new branch
+#switch to the new branch
 git checkout feature-update
 
-#Modify app.py with new feature logic
-echo "print('This is a new change from feature branch')" > app.py
+#modify app.py with new feature logic
+echo "print('This is a new change from feature branch')" > src/git-github-assignment/app.py
 
-#Stage and commit the changes
+#stage and commit the changes
 git add .
-git commit -m "Added new logic from feature branch"
+git commit -m "updated app.py file => add new feature from feature branch"
+```
+![Git Output](./assets/images/question-3/git-new-branch-commit.png)
 
-#Switch back to the main branch
+```bash
+#switch back to the main branch
 git checkout main
 
-#Merge the feature branch into main
+#merge the feature branch into main
 git merge feature-update
+```
+![Git Output](./assets/images/question-3/git-merge-branch.png)
 
-#Verify changes are merged
-git log --online
+```bash
+#verify changes are merged
+git log --oneline
+git log --oneline --graph --all
+```
+![Git Output](./assets/images/question-3/git-log-graph.png)
 
-#Delete the branch safely
+```bash
+#delete the branch safely
 git branch -d feature-update
 git branch
 
 #create a dummy branch for this
 git branch dummy-branch
 
-#Force deleting a branch
+#force deleting a branch
 git branch -D dummy-branch
 ```
-![Git Output](./assets/images/question-2/git-log-one-line.png)
+![Git Output](./assets/images/question-3/git-branch-deletion.png)
 
 ### Output
 
-* Successfully modified the app.py file with additional functionality.
-* Verified file changes using git status.
-* Compared modifications using git diff.
-* Staged selected and complete changes using git add commands.
-* Created multiple commits with meaningful commit messages.
-* Viewed detailed commit history using git log.
-* Viewed compact commit history using git log --oneline.
+* Created a new branch named `feature-update`
+* Switched to the feature branch
+* Modified `app.py` with new feature logic
+* Staged and committed the changes
+* Switched back to the `main` branch
+* Merged feature branch into `main`
+* Verified merge using Git log
+* Deleted branch safely using `git branch -d`
+* Force deleted dummy branch using `git branch -D`
 
 ![Git Output](./assets/images/question-2/github-changes-history.png)
 
@@ -269,12 +282,11 @@ git branch -D dummy-branch
 
 By completing this assignment, I learned:
 
-* How to track and manage code changes using Git
-* How to check repository status before staging changes
-* How to compare file modifications using git diff
-* How to stage selected changes using git add -p
-* How to stage all project changes using git add .
-* How to create meaningful commits with proper commit messages
-* How to maintain project history using multiple commits
-* How to view detailed commit history using git log
-* How to view compact commit history using git log --oneline
+* How to create and manage branches in Git
+* How to develop features separately without affecting the main branch
+* How to switch between branches efficiently
+* How to stage and commit changes in a feature branch
+* How to merge branches into the main branch
+* How to verify merged commits using Git history commands
+* Difference between safe branch deletion and force deletion
+* Importance of branching in collaborative software development

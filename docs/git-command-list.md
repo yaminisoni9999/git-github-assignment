@@ -65,8 +65,10 @@ git commit -m "updated app.py file => add new feature from feature branch"
 git checkout main
 git merge feature-update
 git log --oneline
+git log --oneline --graph --all
 git branch -d feature-update
 git branch
 git branch dummy-branch
-git branch -D dummy-branch 
+git branch -D dummy-branch
+git branch
 ```
