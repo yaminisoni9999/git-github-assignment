@@ -128,7 +128,6 @@ By completing this assignment, I learned:
 - How to create and manage project structure
 - How to stage, commit, and push changes
 - How to connect local repo with GitHub remote repository
-- Basic Git commands for version control
 
 ## Question 2: Working with Changes & History
 
@@ -209,4 +208,73 @@ By completing this assignment, I learned:
 * How to maintain project history using multiple commits
 * How to view detailed commit history using git log
 * How to view compact commit history using git log --oneline
-* Basic Git workflow used in version control systems
+
+## Question 3: Branching & Feature Development
+
+### Objective
+Work with branches and manage feature development.
+
+### Scenario
+You are developing a new feature separately to avoid affecting the main code.
+
+### Git Steps
+```bash
+#Create a new branch (e.g., feature-update)
+git branch feature-update
+
+#Switch to the new branch
+git checkout feature-update
+
+#Modify app.py with new feature logic
+echo "print('This is a new change from feature branch')" > app.py
+
+#Stage and commit the changes
+git add .
+git commit -m "Added new logic from feature branch"
+
+#Switch back to the main branch
+git checkout main
+
+#Merge the feature branch into main
+git merge feature-update
+
+#Verify changes are merged
+git log --online
+
+#Delete the branch safely
+git branch -d feature-update
+git branch
+
+#create a dummy branch for this
+git branch dummy-branch
+
+#Force deleting a branch
+git branch -D dummy-branch
+```
+![Git Output](./assets/images/question-2/git-log-one-line.png)
+
+### Output
+
+* Successfully modified the app.py file with additional functionality.
+* Verified file changes using git status.
+* Compared modifications using git diff.
+* Staged selected and complete changes using git add commands.
+* Created multiple commits with meaningful commit messages.
+* Viewed detailed commit history using git log.
+* Viewed compact commit history using git log --oneline.
+
+![Git Output](./assets/images/question-2/github-changes-history.png)
+
+### Learning Outcomes
+
+By completing this assignment, I learned:
+
+* How to track and manage code changes using Git
+* How to check repository status before staging changes
+* How to compare file modifications using git diff
+* How to stage selected changes using git add -p
+* How to stage all project changes using git add .
+* How to create meaningful commits with proper commit messages
+* How to maintain project history using multiple commits
+* How to view detailed commit history using git log
+* How to view compact commit history using git log --oneline

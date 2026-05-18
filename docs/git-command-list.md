@@ -53,3 +53,20 @@ git commit -m "updated app.py file => new change"
 git log
 git log --oneline
 ```
+
+## Question 3
+
+```bash
+git branch feature-update
+git checkout feature-update
+echo "print('This is a new change from feature branch')" > src/git-github-assignment/app.py
+git add .
+git commit -m "updated app.py file => new feature from feature branch"
+git checkout main
+git merge feature-update
+git log --oneline
+git branch -d feature-update
+git branch
+git branch dummy-branch
+git branch -D dummy-branch 
+```
