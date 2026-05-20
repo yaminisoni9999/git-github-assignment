@@ -375,7 +375,7 @@ git log --oneline
 * Created another commit and safely reversed it using `git revert`.
 * Verified complete commit history using Git log commands.
 
-![Git Output](./assets/images/question-3/github-main-branch.png)
+![Git Output](./assets/images/question-4/github-stash-reset-revert.png)
 
 ### Learning Outcomes
 
