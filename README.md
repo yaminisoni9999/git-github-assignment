@@ -333,6 +333,7 @@ git add .
 git commit -m "updated app.py file and applied stashed changes"
 git log --oneline
 ```
+![Git Output](./assets/images/question-4/git-stash-commit.png)
 
 ```bash
 #make another commit with incorrect code
@@ -341,10 +342,11 @@ git add src/git-github-assignment/app.py
 git commit -m "updated app.py file => incorrect code"
 
 #undo the last commit using reset
-git log --oneline
+git log --oneline -n 5
 git reset --soft HEAD~1
 git log --oneline
 ```
+![Git Output](./assets/images/question-4/git-reset.png)
 
 ```bash
 #make another commit
@@ -353,12 +355,14 @@ git add src/git-github-assignment/app.py
 git commit -m "updated app.py file => correct code"
 
 #undo a commit using revert (create a new reversing commit)
-git log --oneline
+git log --oneline -n 5
 git revert HEAD
 
 #verify the commit history
 git log --oneline
 ```
+![Git Output](./assets/images/question-4/git-revert.png)
+![Git Output](./assets/images/question-4/git-revert-output.png)
 
 ### Output
 

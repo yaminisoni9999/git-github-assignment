@@ -97,14 +97,14 @@ git log --oneline
 echo "print('incorrect code')" > src/git-github-assignment/app.py
 git add src/git-github-assignment/app.py
 git commit -m "updated app.py file => incorrect code"
-git log --oneline
+git log --oneline -n 5
 git reset --soft HEAD~1
 git log --oneline
 
 echo "print('correct code')" > src/git-github-assignment/app.py
 git add src/git-github-assignment/app.py
 git commit -m "updated app.py file => correct code"
-git log --oneline
+git log --oneline -n 5
 git revert HEAD
 git log --oneline
 ```
