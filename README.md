@@ -236,6 +236,11 @@ git commit -m "updated app.py file => add new feature from feature branch"
 ![Git Output](./assets/images/question-3/git-new-branch-commit.png)
 
 ```bash
+#push under feature-update branch
+git push -u origin feature-update
+```
+
+```bash
 #switch back to the main branch
 git checkout main
 
@@ -245,6 +250,11 @@ git merge feature-update
 ![Git Output](./assets/images/question-3/git-merge-branch.png)
 
 ```bash
+#push under main branch
+git push origin main
+```
+
+```bash
 #verify changes are merged
 git log --oneline
 git log --oneline --graph --all
@@ -252,17 +262,22 @@ git log --oneline --graph --all
 ![Git Output](./assets/images/question-3/git-log-graph.png)
 
 ```bash
-#delete the branch safely
+#delete feature-update branch safely
 git branch -d feature-update
 git branch
 
-#create a dummy branch for this
+#create a dummy branch
 git branch dummy-branch
 
 #force deleting a branch
 git branch -D dummy-branch
 ```
 ![Git Output](./assets/images/question-3/git-branch-deletion.png)
+
+```bash
+#delete feature-update branch in github
+git push origin --delete feature-update
+```
 
 ### Output
 
@@ -276,7 +291,7 @@ git branch -D dummy-branch
 * Deleted branch safely using `git branch -d`
 * Force deleted dummy branch using `git branch -D`
 
-![Git Output](./assets/images/question-2/github-changes-history.png)
+![Git Output](./assets/images/question-3/github-main-branch.png)
 
 ### Learning Outcomes
 
@@ -290,3 +305,85 @@ By completing this assignment, I learned:
 * How to verify merged commits using Git history commands
 * Difference between safe branch deletion and force deletion
 * Importance of branching in collaborative software development
+
+## Question 4: Handling Errors (Stash, Reset, Revert)
+
+### Objective
+Learn how to manage mistakes and unfinished work.
+
+### Scenario
+You are in the middle of development but need to handle urgent changes and fix mistakes.
+
+### Git Steps
+```bash
+#make changes to app.py but do not commit
+echo "print('work in progress')" > src/git-github-assignment/app.py
+
+#stash the changes (include untracked files)
+git stash -u
+
+#check the stash list
+git stash list
+
+#apply the stashed changes back
+git stash apply
+
+#commit the changes
+git add .
+git commit -m "updated app.py file and applied stashed changes"
+git log --oneline
+```
+
+```bash
+#make another commit with incorrect code
+echo "print('incorrect code')" > src/git-github-assignment/app.py
+git add src/git-github-assignment/app.py
+git commit -m "updated app.py file => incorrect code"
+
+#undo the last commit using reset
+git log --oneline
+git reset --soft HEAD~1
+git log --oneline
+```
+
+```bash
+#make another commit
+echo "print('correct code')" > src/git-github-assignment/app.py
+git add src/git-github-assignment/app.py
+git commit -m "updated app.py file => correct code"
+
+#undo a commit using revert (create a new reversing commit)
+git log --oneline
+git revert HEAD
+
+#verify the commit history
+git log --oneline
+```
+
+### Output
+
+* Successfully modified `app.py` without committing immediately.
+* Temporarily saved unfinished work using Git stash including untracked files.
+* Verified available stashes using `git stash list`.
+* Restored stashed changes back into the working directory.
+* Created commits for updated code changes.
+* Simulated an incorrect commit and removed it using `git reset`.
+* Created another commit and safely reversed it using `git revert`.
+* Verified complete commit history using Git log commands.
+
+![Git Output](./assets/images/question-3/github-main-branch.png)
+
+### Learning Outcomes
+
+By completing this assignment, I learned:
+
+* How to temporarily save unfinished work using Git stash
+* How to include untracked files while stashing changes
+* How to view available stashes using `git stash list`
+* How to restore stashed changes back to the working directory
+* How to manage mistakes during development
+* How to undo commits using `git reset`
+* How to safely reverse commits using `git revert`
+* Difference between `git reset` and `git revert`
+* How to verify project history using Git log commands
+* Basic error handling and recovery techniques in Git version control

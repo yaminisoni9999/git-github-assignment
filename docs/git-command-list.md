@@ -44,13 +44,17 @@ git push -u origin main
 ```bash
 echo "print('Added a new functionality.')" > src/git-github-assignment/app.py
 git status
+
 git diff rc/git-github-assignment/app.py
 git add -p
 git commit -m "updated app.py file => added new functionality"
+
 echo "print('This is a new change.')" > src/git-github-assignment/app.py
 git add .
 git commit -m "updated app.py file => new change"
+
 git log
+
 git log --oneline
 ```
 
@@ -62,13 +66,45 @@ git checkout feature-update
 echo "print('This is a new change from feature branch')" > src/git-github-assignment/app.py
 git add .
 git commit -m "updated app.py file => add new feature from feature branch"
+git push -u origin feature-update
+
 git checkout main
 git merge feature-update
+git push origin main
 git log --oneline
+
 git log --oneline --graph --all
+
 git branch -d feature-update
 git branch
 git branch dummy-branch
 git branch -D dummy-branch
 git branch
+git push origin --delete feature-update
+```
+
+## Question 4
+
+```bash
+echo "print('work in progress')" > src/git-github-assignment/app.py
+git stash -u
+git stash list
+git stash apply
+git add .
+git commit -m "updated app.py file and applied stashed changes"
+git log --oneline
+
+echo "print('incorrect code')" > src/git-github-assignment/app.py
+git add src/git-github-assignment/app.py
+git commit -m "updated app.py file => incorrect code"
+git log --oneline
+git reset --soft HEAD~1
+git log --oneline
+
+echo "print('correct code')" > src/git-github-assignment/app.py
+git add src/git-github-assignment/app.py
+git commit -m "updated app.py file => correct code"
+git log --oneline
+git revert HEAD
+git log --oneline
 ```
